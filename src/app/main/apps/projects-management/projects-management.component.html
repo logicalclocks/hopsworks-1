@@ -1,0 +1,45 @@
+<div class="page-layout simple fullwidth">
+    <div class="header accent p-24">
+        <h1>Project Administration</h1>
+    </div>
+    <div class="projects-list">
+        <div class="setting">
+            <div class="page-size">
+                Page Size:
+                <mat-form-field>
+                    <select matNativeControl required id="page-size" [(ngModel)]="paginationPageSize" (change)="onPageSizeChanged()">
+                        <option value="10">10</option>
+                        <option value="25" selected>25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="250">250</option>
+                    </select>
+                </mat-form-field>
+            </div>
+            <div class="active-button">
+                <button mat-raised-button
+                        color="accent"
+                        (click)="onSave()"
+                        [disabled]="!selectedRow">Save</button>
+                <button mat-raised-button
+                        color="warn"
+                        (click)="onForceRemove()"
+                        [disabled]="!selectedRow">Force Remove</button>
+            </div>
+        </div>
+        <ag-grid-angular #agGrid
+                         class="ag-theme-fresh"
+                         [rowData]="rowData"
+                         [columnDefs]="columnDefs"
+                         [floatingFilter]="true"
+                         [pagination]="true"
+                         [paginationPageSize]="paginationPageSize"
+                         [paginationNumberFormatter]="paginationNumberFormatter"
+                         [rowSelection]="rowSelection"
+                         [domLayout]="domLayout"
+                         [editType]="editType"
+                         [components]="components"
+                         (selectionChanged)="onSelectionChanged($event)"
+                         (gridReady)="onGridReady($event)"></ag-grid-angular>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="user-edit">
+    <div class="setting">
+        <button mat-raised-button
+                color="accent"
+                (click)="goListUser()">Back to User Management Page</button>
+        <button mat-raised-button
+                color="accent">Update</button>
+    </div>
+    <h3>Personal Info</h3>
+    <app-personal-info [personalInfo]="personalInfo"></app-personal-info>
+    <h3>Change Settings</h3>
+    <app-change-settings></app-change-settings>
+    <h3>Address</h3>
+    <app-address [address]="address"></app-address>
+    <h3>Account Info</h3>
+    <app-account-info [accountInfo]="accountInfo"></app-account-info>
+</div>

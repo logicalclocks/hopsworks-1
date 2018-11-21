@@ -1,0 +1,36 @@
+// Import Fuse core library
+@import "@fuse/scss/core";
+
+// Import app.theme.scss
+@import "app/app.theme";
+
+// Import ag-Grid theme
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-fresh.css";
+
+.ag-theme-fresh {
+    .ag-header-cell-label {
+        float: unset;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ag-floating-filter-full-body {
+        input {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+    }
+
+    .ag-cell {
+        text-align: center;
+    }
+
+    .ag-cell-inline-editing {
+        select {
+            height: 100%;
+        }
+    }
+}

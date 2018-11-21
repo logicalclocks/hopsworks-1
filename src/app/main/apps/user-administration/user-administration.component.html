@@ -1,0 +1,10 @@
+<div class="page-layout simple fullwidth">
+    <div class="header accent p-24">
+        <h1>User Administration</h1>
+    </div>
+    <app-users-list *ngIf="view == UsersViewMode.List"
+                    (goUserEdit)="goUserEdit($event)"></app-users-list>
+    <app-user-edit *ngIf="view == UsersViewMode.Edit"
+                   (goUserList)="goUserList($event)"
+                   [selectedUser]="selectedUser"></app-user-edit>
+</div>

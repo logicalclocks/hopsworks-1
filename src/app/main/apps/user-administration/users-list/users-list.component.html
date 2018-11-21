@@ -1,0 +1,32 @@
+<div class="user-list">
+    <div class="setting">
+        <div class="page-size">
+            Page Size:
+            <mat-form-field>
+                <select matNativeControl required id="page-size" [(ngModel)]="paginationPageSize" (change)="onPageSizeChanged()">
+                    <option value="10">10</option>
+                    <option value="25" selected>25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="250">250</option>
+                </select>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button
+                color="accent"
+                (click)="edit()"
+                [disabled]="!selectedRow">Edit</button>
+    </div>
+    <ag-grid-angular #agGrid
+                     class="ag-theme-fresh"
+                     [rowData]="rowData"
+                     [columnDefs]="columnDefs"
+                     [floatingFilter]="true"
+                     [pagination]="true"
+                     [paginationPageSize]="paginationPageSize"
+                     [paginationNumberFormatter]="paginationNumberFormatter"
+                     [rowSelection]="rowSelection"
+                     [domLayout]="domLayout"
+                     (selectionChanged)="onSelectionChanged($event)"
+                     (gridReady)="onGridReady($event)"></ag-grid-angular>
+</div>
