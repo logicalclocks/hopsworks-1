@@ -5,6 +5,10 @@ import { AppModule } from 'app/app.module';
 import { environment } from 'environments/environment';
 import { hmrBootstrap } from 'hmr';
 
+import { LicenseManager } from 'ag-grid-enterprise';
+
+LicenseManager.setLicenseKey('Evaluation_License_Not_For_Production_Valid_Until26_January_2019__MTU0ODQ2MDgwMDAwMA==21a7453ae27248a2d469f10e8f54b791');
+
 if ( environment.production )
 {
     enableProdMode();

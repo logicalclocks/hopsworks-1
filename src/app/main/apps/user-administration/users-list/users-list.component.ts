@@ -18,6 +18,7 @@ export class UsersListComponent implements OnInit {
     private paginationNumberFormatter;
     private rowSelection;
     private domLayout;
+    private sideBar;
 
     constructor(private usersService: UsersService) {
         this.columnDefs = [
@@ -34,6 +35,28 @@ export class UsersListComponent implements OnInit {
         };
         this.rowSelection = 'single';
         this.domLayout = 'autoHeight';
+        this.sideBar = {
+            toolPanels: [
+                {
+                    id: 'columns',
+                    labelDefault: 'Columns',
+                    labelKey: 'columns',
+                    iconKey: 'columns',
+                    toolPanel: 'agColumnsToolPanel',
+                    toolPanelParams: {
+                        suppressRowGroups: true,
+                        suppressValues: true,
+                        suppressPivots: true,
+                        suppressPivotMode: true,
+                        suppressSideButtons: true,
+                        suppressColumnFilter: true,
+                        suppressColumnSelectAll: true,
+                        suppressColumnExpandAll: true
+                    }
+                }
+            ],
+            defaultToolPanel: 'columns'
+        };
     }
 
     ngOnInit() {
@@ -50,27 +73,148 @@ export class UsersListComponent implements OnInit {
     onGridReady(params) {
         this.gridApi = params.api;
         this.gridColumnApi = params.columnApi;
+        this.rowData = [
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },{
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+            {
+                fname: 'Pavel',
+                lname: 'Panov',
+                email: 'paveltiger9@gmail.com',
+                type: 'ADMIN',
+                status: 'ONLINE',
+                role: 'ADMIN'
+            },
+        ];
 
-        this.usersService.getUsers()
-            .subscribe(users => {
-                this.rowData = users.map(user => {
-                    const roles = [];
-                    user.bbcGroupCollection.map(group => {
-                        roles.push(group.groupName);
-                    });
-                    const type = user.mode === 'M_ACCOUNT_TYPE' ? 'Mobile Account' : user.mode;
-                    const online = user.isonline === 1 ? 'True (' + user.isonline + ')' : 'False (' + user.isonline + ')';
-                    return {
-                        fname: user.fname,
-                        lname: user.lname,
-                        email: user.email,
-                        type: type,
-                        status: user.status,
-                        online: online,
-                        role: '[' + roles + ']',
-                    };
-                });
-            });
+        // this.usersService.getUsers()
+        //     .subscribe(users => {
+        //         this.rowData = users.map(user => {
+        //             const roles = [];
+        //             user.bbcGroupCollection.map(group => {
+        //                 roles.push(group.groupName);
+        //             });
+        //             const type = user.mode === 'M_ACCOUNT_TYPE' ? 'Mobile Account' : user.mode;
+        //             const online = user.isonline === 1 ? 'True (' + user.isonline + ')' : 'False (' + user.isonline + ')';
+        //             return {
+        //                 fname: user.fname,
+        //                 lname: user.lname,
+        //                 email: user.email,
+        //                 type: type,
+        //                 status: user.status,
+        //                 online: online,
+        //                 role: '[' + roles + ']',
+        //             };
+        //         });
+        //     });
     }
 
     edit() {

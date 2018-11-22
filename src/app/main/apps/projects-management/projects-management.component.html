@@ -28,7 +28,7 @@
             </div>
         </div>
         <ag-grid-angular #agGrid
-                         class="ag-theme-fresh"
+                         class="ag-theme-material"
                          [rowData]="rowData"
                          [columnDefs]="columnDefs"
                          [floatingFilter]="true"
@@ -39,6 +39,7 @@
                          [domLayout]="domLayout"
                          [editType]="editType"
                          [components]="components"
+                         [sideBar]="sideBar"
                          (selectionChanged)="onSelectionChanged($event)"
                          (gridReady)="onGridReady($event)"></ag-grid-angular>
     </div>

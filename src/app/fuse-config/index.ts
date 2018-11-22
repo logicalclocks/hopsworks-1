@@ -11,7 +11,7 @@ import { FuseConfig } from '@fuse/types';
 export const fuseConfig: FuseConfig = {
     // Color themes can be defined in src/app/app.theme.scss
     colorTheme      : 'theme-default',
-    customScrollbars: true,
+    customScrollbars: false,
     layout          : {
         style    : 'vertical-layout-1',
         width    : 'fullwidth',
@@ -32,11 +32,11 @@ export const fuseConfig: FuseConfig = {
         footer   : {
             customBackgroundColor: true,
             background           : 'fuse-navy-900',
-            hidden               : false,
+            hidden               : true,
             position             : 'below-fixed'
         },
         sidepanel: {
-            hidden  : false,
+            hidden  : true,
             position: 'right'
         }
     }

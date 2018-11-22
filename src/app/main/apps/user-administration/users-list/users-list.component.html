@@ -18,7 +18,7 @@
                 [disabled]="!selectedRow">Edit</button>
     </div>
     <ag-grid-angular #agGrid
-                     class="ag-theme-fresh"
+                     class="ag-theme-material"
                      [rowData]="rowData"
                      [columnDefs]="columnDefs"
                      [floatingFilter]="true"
@@ -27,6 +27,7 @@
                      [paginationNumberFormatter]="paginationNumberFormatter"
                      [rowSelection]="rowSelection"
                      [domLayout]="domLayout"
+                     [sideBar]="sideBar"
                      (selectionChanged)="onSelectionChanged($event)"
                      (gridReady)="onGridReady($event)"></ag-grid-angular>
 </div>
