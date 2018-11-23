@@ -199,8 +199,8 @@ export class ProjectsManagementComponent implements OnInit {
                         suppressPivots: true,
                         suppressPivotMode: true,
                         suppressSideButtons: true,
-                        suppressColumnFilter: true,
-                        suppressColumnSelectAll: true,
+                        suppressColumnFilter: false,
+                        suppressColumnSelectAll: false,
                         suppressColumnExpandAll: true
                     }
                 }

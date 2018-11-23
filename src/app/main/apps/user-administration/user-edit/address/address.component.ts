@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./address.component.scss']
 })
 export class AddressComponent implements OnInit {
-    @Input() address: any;
+    // @Input() address: any;
 
     private gridApi;
     private gridColumnApi;
@@ -35,7 +35,19 @@ export class AddressComponent implements OnInit {
     onGridReady(params) {
         this.gridApi = params.api;
         this.gridColumnApi = params.columnApi;
-        this.rowData = [this.address];
+        this.rowData = [
+            {
+                co: 'CO',
+                streetNumber: 'Street Number',
+                postalCity: 'Postal City',
+                state: 'State',
+                organizationPhone: '79876543210',
+                fax: 'Fax',
+                contactPerson: 'Pavel',
+                department: 'Department',
+                website: 'Website'
+            }
+        ];
     }
 
 }

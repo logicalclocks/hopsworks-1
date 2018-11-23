@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./account-info.component.scss']
 })
 export class AccountInfoComponent implements OnInit {
-    @Input() accountInfo: any;
+    // @Input() accountInfo: any;
 
     private gridApi;
     private gridColumnApi;
@@ -31,7 +31,15 @@ export class AccountInfoComponent implements OnInit {
     onGridReady(params) {
         this.gridApi = params.api;
         this.gridColumnApi = params.columnApi;
-        this.rowData = [this.accountInfo];
+        this.rowData = [
+            {
+                currentUserStatus: 'Current User Status',
+                accountType: 'Account Type',
+                currentHopsworksRoles: 'ADMIN',
+                maxNumProjects: 3,
+                lastPasswordChange: new Date()
+            }
+        ];
     }
 
 }

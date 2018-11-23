@@ -23,11 +23,12 @@ export class UserAdministrationComponent implements OnInit {
     }
 
     goUserEdit(email: any) {
-        this.usersService.getUser(email)
-            .subscribe(user => {
-                this.selectedUser = user;
-                this.view = UsersViewMode.Edit;
-            });
+        // this.usersService.getUser(email)
+        //     .subscribe(user => {
+        //         this.selectedUser = user;
+        //         this.view = UsersViewMode.Edit;
+        //     });
+        this.view = UsersViewMode.Edit;
     }
 
     goUserList() {

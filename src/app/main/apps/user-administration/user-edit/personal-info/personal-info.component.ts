@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./personal-info.component.scss']
 })
 export class PersonalInfoComponent implements OnInit {
-    @Input() personalInfo: any;
+    // @Input() personalInfo: any;
 
     private gridApi;
     private gridColumnApi;
@@ -30,7 +30,14 @@ export class PersonalInfoComponent implements OnInit {
     onGridReady(params) {
         this.gridApi = params.api;
         this.gridColumnApi = params.columnApi;
-        this.rowData = [this.personalInfo];
+        this.rowData = [
+            {
+                name: 'Pavel Panov',
+                email: 'paveltiger9@gmail.com',
+                phone: '79876543210',
+                organization: 'Any'
+            }
+        ];
     }
 
 }

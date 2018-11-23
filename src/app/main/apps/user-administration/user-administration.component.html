@@ -5,6 +5,8 @@
     <app-users-list *ngIf="view == UsersViewMode.List"
                     (goUserEdit)="goUserEdit($event)"></app-users-list>
     <app-user-edit *ngIf="view == UsersViewMode.Edit"
-                   (goUserList)="goUserList($event)"
-                   [selectedUser]="selectedUser"></app-user-edit>
+                   (goUserList)="goUserList($event)"></app-user-edit>
+    <!--<app-user-edit *ngIf="view == UsersViewMode.Edit"-->
+                   <!--(goUserList)="goUserList($event)"-->
+                   <!--[selectedUser]="selectedUser"></app-user-edit>-->
 </div>
